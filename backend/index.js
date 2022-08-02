@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors')
 const user_routes = require('./features/user/user_routes');
-const food_routes = require('./features/food/food_routes')
+const food_routes = require('./features/food/food_routes');
 require('dotenv').config()
 
 const app = express()
@@ -14,7 +14,7 @@ app.use(bodyParser.json())
 app.use('/api/users', user_routes)
 app.use('/api/food', food_routes)
 
-app.use((req, res, body) => {
+app.use((error, req, res, body) => {
     if (res.headerSent) {
         return next(error);
     }

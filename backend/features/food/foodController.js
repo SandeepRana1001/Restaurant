@@ -2,11 +2,12 @@ const { v4: uuidv4 } = require('uuid');
 const { validationResult } = require('express-validator');
 const HttpError = require('../http-error');
 const Food = require('./foodModel');
+const mongoose = require('mongoose');
 
 const getMenu = async (req, res, next) => {
     const data = await Food.find({})
 
-    return res.status(200).json({
+    res.status(200).json({
         data
     })
 }
@@ -50,7 +51,7 @@ const createNewItem = async (req, res, next) => {
         return next(new HttpError('Failed to create new item', 500))
     }
 
-    return res.status(201).json({ user: new_item.toObject({ getters: true }) })
+    res.status(201).json({ user: new_item.toObject({ getters: true }) })
 }
 
 const updateMenuItem = async (req, res, next) => {
@@ -85,10 +86,40 @@ const updateMenuItem = async (req, res, next) => {
         return next(new HttpError('Unable To Save Data', 422))
     }
 
-    return res.status(202).json({ existingItem })
+    res.status(202).json({ existingItem })
 
+}
+
+const deleteMenuItem = async (req, res, next) => {
+    const id = req.params.id
+    let existingItem;
+    try {
+        existingItem = await Food.findOne({ _id: id })
+    } catch (err) {
+        return next(new HttpError('Unable To Find The Data', 422))
+    }
+    if (!existingItem) {
+        return next(new HttpError('This item doesnot exists in our menu', 500))
+    }
+    console.clear()
+    console.log(existingItem)
+
+    try {
+        const sess = await mongoose.startSession()
+        sess.startTransaction()
+        await existingItem.remove({ session: sess })
+        await sess.commitTransaction()
+
+    } catch (err) {
+        const error = new HttpError('Something went wrong. Cannot Remove Item' + err, 500)
+        console.log(err)
+        return next(error)
+    }
+
+    res.status(200).json({ messages: 'Deleted Menu Item' });
 }
 
 module.exports.createNewItem = createNewItem
 module.exports.getMenu = getMenu
 module.exports.updateMenuItem = updateMenuItem
+module.exports.deleteMenuItem = deleteMenuItem

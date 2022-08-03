@@ -19,6 +19,6 @@ router.post('/createNewItem', [
 
 router.patch('/updateMenuItem/:id', food_controller.updateMenuItem);
 
-
+router.delete('/deleteMenuItem/:id', food_controller.deleteMenuItem)
 
 module.exports = router

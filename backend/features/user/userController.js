@@ -2,6 +2,7 @@ const { v4: uuidv4 } = require('uuid');
 const { validationResult } = require('express-validator');
 const HttpError = require('../http-error');
 const User = require('./userModel');
+const Cart = require('../cart/cartModel');
 const passwordHash = require('password-hash');
 require('dotenv').config()
 
@@ -35,13 +36,24 @@ const createAccount = async (req, res, next) => {
         image: 'https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80',
     })
 
+
     try {
         await createdUser.save()
     } catch (err) {
-        const error = new HttpError('Cannot Save the record' + err, 500)
+        const error = new HttpError('Cannot Save the user record' + err, 500)
         return next(error)
     }
-    res.status(201).json({ user: createdUser.toObject({ getters: true }) })
+
+    const createdCart = new Cart({
+        creator: createdUser._id
+    })
+    try {
+        await createdCart.save()
+    } catch (err) {
+        const error = new HttpError('Cannot Save the cart record' + err, 500)
+        return next(error)
+    }
+    res.status(201).json({ user: createdUser.toObject({ getters: true }), cart: createdCart.toObject({ getters: true }) })
 }
 
 const signIn = async (req, res, next) => {

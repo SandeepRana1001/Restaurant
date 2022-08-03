@@ -3,10 +3,11 @@ const uniqueValidator = require('mongoose-unique-validator')
 
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-
+const cartSchema = new Schema({
+    food_id: [{ type: Schema.Types.ObjectId, ref: 'Food' }],
+    creator: { type: Schema.Types.ObjectId, ref: 'User', required: true }
 })
 
-userSchema.plugin(uniqueValidator)
 
-module.exports = mongoose.model('User', userSchema)
+
+module.exports = mongoose.model('Cart', cartSchema)

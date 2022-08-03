@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors')
 const user_routes = require('./features/user/user_routes');
 const food_routes = require('./features/food/food_routes');
+const cart_routes = require('./features/cart/cart_routes');
+
 require('dotenv').config()
 
 const app = express()
@@ -13,6 +15,8 @@ app.use(bodyParser.json())
 
 app.use('/api/users', user_routes)
 app.use('/api/food', food_routes)
+app.use('/api/cart', cart_routes)
+
 
 app.use((error, req, res, body) => {
     if (res.headerSent) {

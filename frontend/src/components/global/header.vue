@@ -1,39 +1,68 @@
 <template>
   <div class="header" id="header">
-    <div>
-      <b-navbar
-        toggleable="lg"
-        type="dark"
-        class="navbar_color fixed-top"
-        id="my_nav"
-      >
-        <b-navbar-brand href="#">Eat Pray Love</b-navbar-brand>
-
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-        <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav>
-            <b-nav-item href="#">About</b-nav-item>
-            <b-nav-item href="#">Contact</b-nav-item>
-            <b-nav-item href="#">Sign Up </b-nav-item>
-          </b-navbar-nav>
-
-          <!-- Right aligned nav items -->
-          <b-navbar-nav class="ml-auto">
-            <b-nav-form>
-              <b-form-input
-                size="sm"
-                class="mr-sm-2"
-                placeholder="Search"
-              ></b-form-input>
-              <b-button size="sm" class="my-2 my-sm-0" type="submit"
-                >Search</b-button
+    <nav
+      class="navbar navbar-expand-lg navbar-dark navbar_color fixed-top"
+      id="my_nav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
               >
-            </b-nav-form>
-          </b-navbar-nav>
-        </b-collapse>
-      </b-navbar>
-    </div>
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
     <div class="header_items_container">
       <h4>{{ text }}</h4>
       <div class="header_button_container" v-if="showbutton.trim().length > 0">
@@ -127,7 +156,7 @@ import $ from "jquery";
 
 $(document).ready(() => {
   $(window).scroll(function () {
-    if ($(window).scrollTop() > 250) {
+    if ($(window).scrollTop() > 50) {
       $("#my_nav").addClass("navbar_color_dark");
       $("#my_nav").removeClass("navbar_color");
     } else {

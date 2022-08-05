@@ -1,28 +1,44 @@
 <template>
-  <div class="card" style="width: 18rem">
-    <img src="../../assets/banner_food.jpg" class="card-img-top" alt="..." />
+  <div class="card">
+    <div class="card_img_container">
+      <img :src="image" class="card-img-top" :alt="heading" />
+    </div>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">{{ heading }}</h5>
       <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
+        {{ content }}
       </p>
     </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">An item</li>
-      <li class="list-group-item">A second item</li>
-      <li class="list-group-item">A third item</li>
-    </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+
+    <div class="card-footer">
+      <a href="#" class="btn theme"> Order Now </a>
     </div>
   </div>
 </template>
+
+<style>
+.card {
+  width: 18rem;
+}
+
+.card_img_container {
+  height: 250px;
+}
+
+img {
+  height: 100%;
+  object-fit: fill;
+}
+</style>
 
 <script>
 /* eslint-disable */
 export default {
   name: "card",
+  props: {
+    heading: String,
+    content: String,
+    image: String,
+  },
 };
 </script>

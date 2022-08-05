@@ -1,31 +1,21 @@
 <template>
-  <div id="hero">
+  <section id="hero">
     <div class="container mb-5">
-      <div class="row justify-content-around">
-        <div class="col-xl-6 col-lg-6 col-sm-12 col-12">
-          <p class="text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            mollitia, molestiae quas vel sint commodi repudiandae consequuntur
-            voluptatum laborum numquam blanditiis harum quisquam eius sed odit
-            fugiat iusto fuga praesentium optio, eaque rerum! Provident
-            similique accusantium nemo autem. Veritatis obcaecati tenetur iure
-            eius earum ut molestias architecto voluptate aliquam nihil, eveniet
-            aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur
-            error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
-            quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias
-            eos sapiente officiis modi at sunt excepturi expedita sint? Sed
-            quibusdam recusandae alias error harum maxime adipisci amet laborum.
-          </p>
-        </div>
-
-        <div class="col-xl-6 col-lg-6 col-sm-12 col-12">
+      <div class="row justify-content-center">
+        <div class="col-xl-4 col-lg-6 col-sm-12 col-12">
           <div class="img-container">
             <img src="../../assets/banner_food.jpg" alt="North Indian Food" />
           </div>
         </div>
+        <div class="col-xl-4 col-lg-6 col-sm-12 col-12">
+          <h3>Restaurant</h3>
+          <p>Currently open for dine in & take out.</p>
+
+          <a href="/" class="btn theme"> View Menu </a>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -36,9 +26,17 @@ export default {
 </script>
 
 <style scoped>
-#hero {
-  margin-top: 50px;
-  margin-bottom: 100px;
+h3 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+  padding: 20px 0;
+}
+
+p {
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-family: "Roboto", sans-serif;
+  padding: 10px 0;
 }
 
 .img-container {

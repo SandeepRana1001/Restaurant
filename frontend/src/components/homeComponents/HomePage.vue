@@ -1,14 +1,22 @@
 <template>
   <div id="HomePage">
+    <HomeSection_I />
     <Hero />
-    <CardSection />
+    <Specials />
   </div>
 </template>
+<style scoped>
+section {
+  font-family: "Uchen", serif;
+  padding: 80px 0;
+}
+</style>
 <script>
 import Hero from "./hero.vue";
-import CardSection from "./CardSection.vue";
+import HomeSection_I from "./homeSection_I.vue";
+import Specials from "./Specials.vue";
 export default {
   name: "HomePage",
-  components: { Hero, CardSection },
+  components: { Hero, HomeSection_I, Specials },
 };
 </script>

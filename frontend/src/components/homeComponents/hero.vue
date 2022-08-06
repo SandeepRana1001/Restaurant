@@ -11,7 +11,7 @@
           <h3>Restaurant</h3>
           <p>Currently open for dine in & take out.</p>
 
-          <a href="/" class="btn theme"> View Menu </a>
+          <LinkButton link="/" text="View Menu"></LinkButton>
         </div>
       </div>
     </div>
@@ -19,9 +19,11 @@
 </template>
 
 <script>
+import LinkButton from "../global/linkButton.vue";
 /* eslint-disable */
 export default {
   name: "Hero",
+  components: { LinkButton },
 };
 </script>
 

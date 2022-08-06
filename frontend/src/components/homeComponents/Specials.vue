@@ -9,7 +9,7 @@
             image="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
             heading="Our Specials - I"
             content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-        mollitia, molestiae quas vel sint commodi repudiandae consequuntur"
+        mollitia"
           />
         </div>
 
@@ -18,7 +18,7 @@
             image="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
             heading="Our Specials - II"
             content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-        mollitia, molestiae quas vel sint commodi repudiandae consequuntur"
+        mollitia"
           />
         </div>
 
@@ -27,7 +27,7 @@
             image="https://images.unsplash.com/photo-1467003909585-2f8a72700288?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
             heading="Our Specials - III"
             content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
-        mollitia, molestiae quas vel sint commodi repudiandae consequuntur"
+        mollitia"
           />
         </div>
       </div>

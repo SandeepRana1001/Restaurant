@@ -1,5 +1,11 @@
 <template>
   <div id="HomePage">
+    <Header
+      text="Welcome To Our Restaurant"
+      showbutton="true"
+      button_1="Explore Website"
+      button_2="Explore Menu"
+    />
     <HomeSection_I />
     <Hero />
     <Specials />
@@ -15,8 +21,9 @@ section {
 import Hero from "./hero.vue";
 import HomeSection_I from "./homeSection_I.vue";
 import Specials from "./Specials.vue";
+import Header from "../global/header.vue";
 export default {
   name: "HomePage",
-  components: { Hero, HomeSection_I, Specials },
+  components: { Hero, HomeSection_I, Specials, Header },
 };
 </script>

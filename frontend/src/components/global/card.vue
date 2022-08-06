@@ -11,7 +11,7 @@
     </div>
 
     <div class="card-footer">
-      <a href="#" class="btn theme"> Order Now </a>
+      <LinkButton link="#" text="Order Now"></LinkButton>
     </div>
   </div>
 </template>
@@ -19,6 +19,12 @@
 <style>
 .card {
   width: 18rem;
+  border: 0;
+}
+
+.card-footer {
+  border: 0;
+  background: transparent;
 }
 
 .card_img_container {
@@ -32,6 +38,7 @@ img {
 </style>
 
 <script>
+import LinkButton from "./linkButton.vue";
 /* eslint-disable */
 export default {
   name: "card",
@@ -40,5 +47,6 @@ export default {
     content: String,
     image: String,
   },
+  components: { LinkButton },
 };
 </script>

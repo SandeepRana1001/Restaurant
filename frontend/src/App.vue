@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HeaderNoBanner />
+    <Header />
     <router-view></router-view>
 
     <Footer />
@@ -14,14 +14,13 @@
 import Header from "./components/global/header.vue";
 import HomePage from "./components/homeComponents/HomePage.vue";
 import Footer from "./components/global/footer.vue";
-import HeaderNoBanner from "./components/global/headerNoBanner.vue";
+
 export default {
   name: "App",
   components: {
     Header,
     HomePage,
     Footer,
-    HeaderNoBanner,
   },
 };
 </script>

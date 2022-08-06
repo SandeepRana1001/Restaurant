@@ -57,7 +57,6 @@ p {
 }
 </style>
 <script>
-import HeaderNoBanner from "../global/headerNoBanner.vue";
 import IconWithDescription from "../global/iconWithDescription.vue";
 import LinkButton from "../global/linkButton.vue";
 /* eslint-disable */
@@ -65,8 +64,6 @@ import LinkButton from "../global/linkButton.vue";
 export default {
   name: "About",
   components: {
-    HeaderNoBanner,
-    HeaderNoBanner,
     IconWithDescription,
     LinkButton,
   },

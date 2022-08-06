@@ -7,11 +7,12 @@
             <img src="../../assets/banner_food.jpg" alt="North Indian Food" />
           </div>
         </div>
-        <div class="col-xl-4 col-lg-6 col-sm-12 col-12">
+        <div class="col-xl-4 col-lg-6 col-sm-10 col-10">
           <h3>Restaurant</h3>
           <p>Currently open for dine in & take out.</p>
-
-          <LinkButton link="/" text="View Menu"></LinkButton>
+          <p>
+            <LinkButton link="/" text="View Menu"></LinkButton>
+          </p>
         </div>
       </div>
     </div>
@@ -50,5 +51,21 @@ p {
   height: 100%;
   object-fit: cover;
   border-radius: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+  h3 {
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 20px;
+    padding-bottom: 5px;
+  }
+  p {
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1px;
+    font-family: "Roboto", sans-serif;
+    padding: 10px 0;
+  }
 }
 </style>

@@ -27,7 +27,9 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <router-link class="nav-link" aria-current="page" to="/contact"
+                >Contact</router-link
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Sign Up</a>

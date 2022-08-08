@@ -8,12 +8,16 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import HomePage from './components/homeComponents/HomePage'
 import AboutPage from './components/aboutComponents/AboutPage'
+import ContactPage from './components/contactComponents/contactPage'
+
 
 Vue.use(VueRouter);
 
 const routes = [
   { path: '/', component: HomePage },
-  { path: '/about', component: AboutPage }
+  { path: '/about', component: AboutPage },
+  { path: '/contact', component: ContactPage }
+
 ]
 
 const router = new VueRouter({

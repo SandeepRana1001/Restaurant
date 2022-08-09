@@ -36,6 +36,13 @@ label {
 .form-control:focus {
   outline: none !important;
 }
+
+.heading {
+  color: #8e44ad;
+  font-weight: bolder;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
 </style>
 <script>
 /* eslint-disable */

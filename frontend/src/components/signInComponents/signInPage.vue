@@ -5,7 +5,7 @@
         <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
           <div class="form_container">
             <form>
-              <h3 class="text-center mb-4">Sign In</h3>
+              <h3 class="heading text-center mb-4">Sign In</h3>
               <div class="form-group">
                 <label>Email</label>
                 <input type="email" class="form-control" autocomplete="off" />

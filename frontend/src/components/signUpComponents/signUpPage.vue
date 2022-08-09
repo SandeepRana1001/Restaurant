@@ -5,7 +5,7 @@
         <div class="col-xl-8 col-lg-8 col-md-8 col-sm-0 col-0 background"></div>
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
           <div class="form_container">
-            <h3>Sign Up</h3>
+            <h3 class="heading">Sign Up</h3>
             <form>
               <div class="form-group">
                 <label>Name</label>
@@ -40,7 +40,7 @@
                 type="submit"
                 text="Sign Up"
                 classes="btn-block mb-3"
-                :disabled_prop="accepted"
+                :disabled_prop="!accepted"
               ></CustomButton>
             </form>
           </div>

@@ -22,20 +22,16 @@
               >
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" aria-current="page" to="/about"
-                >About</router-link
-              >
+              <router-link class="nav-link" to="/about">About</router-link>
             </li>
             <li class="nav-item">
-              <router-link class="nav-link" aria-current="page" to="/contact"
-                >Contact</router-link
-              >
+              <router-link class="nav-link" to="/contact">Contact</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign Up</a>
+              <router-link class="nav-link" to="/signUp">Sign Up</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign In</a>
+              <router-link class="nav-link" to="/signIn">Sign In</router-link>
             </li>
           </ul>
         </div>

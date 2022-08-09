@@ -9,6 +9,9 @@ import VueRouter from 'vue-router'
 import HomePage from './components/homeComponents/HomePage'
 import AboutPage from './components/aboutComponents/AboutPage'
 import ContactPage from './components/contactComponents/contactPage'
+import signUpPage from './components/signUpComponents/signUpPage'
+import signInPage from './components/signInComponents/signInPage'
+
 
 
 Vue.use(VueRouter);
@@ -16,7 +19,11 @@ Vue.use(VueRouter);
 const routes = [
   { path: '/', component: HomePage },
   { path: '/about', component: AboutPage },
-  { path: '/contact', component: ContactPage }
+  { path: '/contact', component: ContactPage },
+  { path: '/signUp', component: signUpPage },
+  { path: '/signIn', component: signInPage }
+
+
 
 ]
 

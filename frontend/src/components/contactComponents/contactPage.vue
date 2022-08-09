@@ -23,21 +23,13 @@
                   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-1">
                     <div class="form-group">
                       <label>Name</label>
-                      <input
-                        type="text"
-                        placeholder="Full Name"
-                        class="form-control"
-                      />
+                      <input type="text" class="form-control" />
                     </div>
                   </div>
                   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-1">
                     <div class="form-group">
                       <label>Email</label>
-                      <input
-                        type="email"
-                        placeholder="Email Address"
-                        class="form-control"
-                      />
+                      <input type="email" class="form-control" />
                     </div>
                   </div>
                 </div>
@@ -45,11 +37,7 @@
                   <div class="row">
                     <div class="form-group">
                       <label>Describe your issue</label>
-                      <textarea
-                        class="form-control"
-                        placeholder="Describe Your Issue"
-                        rows="5"
-                      ></textarea>
+                      <textarea class="form-control" rows="5"></textarea>
                     </div>
                   </div>
                 </div>

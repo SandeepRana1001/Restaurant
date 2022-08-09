@@ -1,5 +1,10 @@
 <template>
-  <button :type="type" class="btn theme" :class="classes">
+  <button
+    :type="type"
+    class="btn theme"
+    :class="classes"
+    :disabled="disabled_prop"
+  >
     {{ text }}
     <i class="lni lni-arrow-right"></i>
   </button>
@@ -40,6 +45,7 @@ export default {
     type: String,
     text: String,
     classes: String,
+    disabled_prop: Boolean,
   },
 };
 </script>

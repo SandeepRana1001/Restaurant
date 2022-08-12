@@ -33,8 +33,8 @@ label {
   font-weight: bold;
 }
 
-.form-control:focus {
-  outline: none !important;
+input:focus {
+  box-shadow: none !important;
 }
 
 .heading {

@@ -6,7 +6,11 @@
     :disabled="disabled_prop"
   >
     {{ text }}
-    <i class="lni lni-arrow-right"></i>
+    <i
+      :class="
+        loading ? 'spinner-border spinner-border-sm' : 'lni lni-arrow-right'
+      "
+    ></i>
   </button>
 </template>
 
@@ -46,6 +50,7 @@ export default {
     text: String,
     classes: String,
     disabled_prop: Boolean,
+    loading: Boolean,
   },
 };
 </script>

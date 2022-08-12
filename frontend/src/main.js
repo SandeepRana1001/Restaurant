@@ -3,6 +3,7 @@
 import '@babel/polyfill'
 import 'mutationobserver-shim'
 import Vue from 'vue'
+import './plugins/axios'
 import './plugins/bootstrap-vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
@@ -12,7 +13,7 @@ import ContactPage from './components/contactComponents/contactPage'
 import signUpPage from './components/signUpComponents/signUpPage'
 import signInPage from './components/signInComponents/signInPage'
 
-
+// require('dotenv').config()
 
 Vue.use(VueRouter);
 

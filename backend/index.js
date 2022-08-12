@@ -11,6 +11,13 @@ require('dotenv').config()
 const app = express()
 
 app.use(cors())
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,OPTIONS,DELETE,PUT');
+    next();
+});
+
 app.use(bodyParser.json())
 
 app.use('/api/users', user_routes)
@@ -18,13 +25,19 @@ app.use('/api/food', food_routes)
 app.use('/api/cart', cart_routes)
 
 
-app.use((error, req, res, body) => {
+app.use((req, res, next) => {
+    const error = new HttpError('Could not find the route.', 404)
+
+    throw error
+})
+
+app.use((error, req, res, next) => {
     if (res.headerSent) {
         return next(error);
     }
     res.status(error.code || 500)
     res.json({ message: error.message || 'An unknown error occurred! ' });
-})
+});
 
 const url = `${process.env.MONGO_URI}`
 mongoose.connect(url, {

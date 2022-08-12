@@ -60,10 +60,11 @@ const signIn = async (req, res, next) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-        return next(new HttpError('Invalid inputs passed , please check your Data ', 422))
+        return next(new HttpError(`Invalid inputs passed , please check your Data `, 422))
     }
 
     const { email, password } = req.body
+    // return res.status(200).json({ email, password })
 
     let existingUser;
 
@@ -77,10 +78,10 @@ const signIn = async (req, res, next) => {
         return next(new HttpError('User Doesnot Exists , Please Create A New Account ', 500))
     }
     const existingUser_password = existingUser.password;
-    console.clear();
-    console.log(existingUser);
+
     if (!passwordHash.verify(password, existingUser_password)) {
-        return next(new HttpError('Invalid Password Provide', 500))
+
+        return next(new HttpError('Invalid Password Provided', 500))
     }
 
     const user = {
@@ -89,7 +90,7 @@ const signIn = async (req, res, next) => {
         name: existingUser.name
     }
 
-    return res.status(200).json({ user })
+    return res.status(202).json({ user })
 
 }
 

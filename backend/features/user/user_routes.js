@@ -15,7 +15,8 @@ router.post('/createAccount',
 )
 
 
-router.post('/signIn',
+router.post('/signIn'
+    ,
     [
         check('email').isEmail(),
         check('password').not().isEmpty(),

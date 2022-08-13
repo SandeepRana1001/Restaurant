@@ -71,14 +71,6 @@
   margin-bottom: 20px;
 }
 
-.error input {
-  border-bottom: 2px solid #c0392b;
-}
-.error p {
-  color: #c0392b;
-  margin: 5px 0 !important;
-}
-
 @media screen and (max-width: 600px) {
   .signInPage {
     height: 100%;
@@ -118,6 +110,9 @@ export default {
     },
     async signInHandler(e) {
       e.preventDefault();
+      // this.$store.commit("increment");
+      // console.log(this.$store.state.count);
+
       if (!validator.emailValidation(this.formData.email)) {
         this.errors.email = "Valid email address is required";
         return false;

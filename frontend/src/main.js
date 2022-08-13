@@ -12,6 +12,7 @@ import AboutPage from './components/aboutComponents/AboutPage'
 import ContactPage from './components/contactComponents/contactPage'
 import signUpPage from './components/signUpComponents/signUpPage'
 import signInPage from './components/signInComponents/signInPage'
+import store from './store'
 
 // require('dotenv').config()
 
@@ -36,5 +37,6 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

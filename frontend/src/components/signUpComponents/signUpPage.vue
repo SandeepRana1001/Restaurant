@@ -6,7 +6,7 @@
         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
           <div class="form_container">
             <h3 class="heading">Sign Up</h3>
-            <form>
+            <form :onsubmit="submitHandler">
               <div class="form-group">
                 <label>Name</label>
                 <input type="text" class="form-control" autocomplete="off" />
@@ -40,7 +40,6 @@
                 type="submit"
                 text="Sign Up"
                 classes="btn-block mb-3"
-                :disabled_prop="!accepted"
               ></CustomButton>
             </form>
           </div>
@@ -93,15 +92,33 @@
 }
 </style>
 <script>
+/* eslint-disable */
 import CustomButton from "../global/customButton.vue";
+import apiObject from "@/globalFunctions/api";
+
 export default {
   name: "signUpPage",
   components: { CustomButton },
+
   data: () => {
     return {
-      disabled: true,
-      accepted: false,
+      utils: {
+        loadingData: false,
+        disabled: false,
+      },
+      formData: {
+        email: null,
+        key: null,
+      },
+      errors: {
+        email: null,
+        key: null,
+        errorMessage: null,
+      },
     };
+  },
+  methods: {
+    async submitHandler() {},
   },
 };
 </script>

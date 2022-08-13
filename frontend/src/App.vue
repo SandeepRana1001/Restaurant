@@ -43,6 +43,14 @@ input:focus {
   font-size: 3rem;
   margin-bottom: 20px;
 }
+
+.error input {
+  border-bottom: 2px solid #c0392b;
+}
+.error p {
+  color: #c0392b;
+  margin: 5px 0 !important;
+}
 </style>
 <script>
 /* eslint-disable */

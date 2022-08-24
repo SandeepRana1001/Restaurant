@@ -1,5 +1,5 @@
 const { validationResult } = require('express-validator');
-const HttpError = require('../http-error');
+const HttpError = require('../../middlewares/http-error');
 const Food = require('../food/foodModel')
 const Cart = require('./cartModel')
 

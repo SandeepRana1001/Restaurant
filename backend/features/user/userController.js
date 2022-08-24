@@ -1,10 +1,10 @@
 const { v4: uuidv4 } = require('uuid');
 const { validationResult } = require('express-validator');
-const HttpError = require('../http-error');
+const HttpError = require('../../middlewares/http-error');
 const User = require('./userModel');
 const Cart = require('../cart/cartModel');
 const passwordHash = require('password-hash');
-require('dotenv').config()
+const jwt = require('../../utils/token')
 
 const createAccount = async (req, res, next) => {
 
@@ -83,11 +83,21 @@ const signIn = async (req, res, next) => {
 
         return next(new HttpError('Invalid Password Provided', 500))
     }
+    const token = jwt.getNewToken({ _id: existingUser.id }, '1d')
+    const refreshToken = jwt.getNewToken({ _id: existingUser.id }, '2d')
+
+    // Assigning refresh token in http-only cookie 
+    res.cookie('jwt', refreshToken, {
+        httpOnly: true,
+        sameSite: 'None', secure: true,
+        maxAge: 24 * 60 * 60 * 1000
+    });
 
     const user = {
         id: existingUser.id,
         email: existingUser.email,
-        name: existingUser.name
+        name: existingUser.name,
+        token
     }
 
     return res.status(202).json({ user })

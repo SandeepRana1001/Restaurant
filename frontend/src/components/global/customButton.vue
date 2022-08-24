@@ -8,7 +8,11 @@
     {{ text }}
     <i
       :class="
-        loading ? 'spinner-border spinner-border-sm' : 'lni lni-arrow-right'
+        loading
+          ? 'spinner-border spinner-border-sm'
+          : iconClass.length > 0
+          ? iconClass
+          : 'lni lni-arrow-right'
       "
     ></i>
   </button>
@@ -51,6 +55,7 @@ export default {
     classes: String,
     disabled_prop: Boolean,
     loading: Boolean,
+    iconClass: String,
   },
 };
 </script>

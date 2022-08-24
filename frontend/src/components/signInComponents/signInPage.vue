@@ -37,6 +37,7 @@
                 classes="btn-block mt-5 mb-3"
                 :loading="utils.loadingData"
                 :disabled_prop="utils.disabled"
+                iconClass=""
               ></CustomButton>
             </form>
           </div>
@@ -93,8 +94,8 @@ export default {
         disabled: false,
       },
       formData: {
-        email: null,
-        key: null,
+        email: "sr36358@gmail.com",
+        key: "1234567",
       },
       errors: {
         email: null,
@@ -110,8 +111,8 @@ export default {
     },
     async signInHandler(e) {
       e.preventDefault();
-      // this.$store.commit("increment");
-      // console.log(this.$store.state.count);
+      // this.$store.commit("increment", 5);
+      // console.log(this.$store.state.counter);
 
       if (!validator.emailValidation(this.formData.email)) {
         this.errors.email = "Valid email address is required";
@@ -130,20 +131,30 @@ export default {
         this.updateUtils(true);
 
         //api call
-        setTimeout(() => {}, 1000);
+
         const jsonData = await apiObject.POST("users/signIn", {
           email: this.formData.email,
           password: this.formData.key,
         });
 
         if (jsonData.status !== 200 && jsonData.ok === false) {
-          this.updateUtils(false);
+          this.updateUtils(true);
 
           this.errors.errorMessage = jsonData.message;
         } else {
           this.updateUtils(false);
-
           this.errors.errorMessage = null;
+          const body = jsonData.content.user;
+          // console.log(jsonData.content.user);
+          body.isLoggedIn = true;
+          // const body = jsonData.
+          this.$store.dispatch("updateUser", body);
+          this.$store.dispatch("setLocalStorage", body);
+
+          console.log(this.$store);
+
+          window.location.href = "/#menu";
+          this.$router.push("/menu");
         }
       }
     },

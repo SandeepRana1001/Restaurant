@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header />
-    <router-view></router-view>
+    <Header :loggedIn="loggedIn" />
+    <router-view @send="receive"></router-view>
 
     <Footer />
   </div>
@@ -33,7 +33,8 @@ label {
   font-weight: bold;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   box-shadow: none !important;
 }
 
@@ -64,6 +65,17 @@ export default {
     Header,
     HomePage,
     Footer,
+  },
+  data() {
+    return {
+      loggedIn: false,
+      name: null,
+    };
+  },
+  methods: {
+    receive(childData) {
+      this.loggedIn = true;
+    },
   },
 };
 </script>

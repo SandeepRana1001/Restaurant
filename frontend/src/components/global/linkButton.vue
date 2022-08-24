@@ -39,6 +39,7 @@ export default {
   props: {
     link: String,
     text: String,
+    iconClass: String,
   },
 };
 </script>

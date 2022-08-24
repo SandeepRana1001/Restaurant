@@ -1,18 +1,30 @@
 /* eslint-disable */
 
 
-class API {
-    GET = async (url) => {
-        const response = await fetch(`http://localhost:5000/api/${url}`)
+class API_AUTH {
+    GET = async (url, token) => {
+        let response;
+
+        response = await fetch(`http://localhost:5000/api/${url}`, {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + token
+            },
+        })
+
+
         let finalData = await response.json()
         // console.log(finalData)
         return finalData
     }
 
-    POST = async (url, data) => {
+    POST = async (url, data, token) => {
         const requestOptions = {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': 'Bearer ' + token
+            },
             body: JSON.stringify(data),
         };
         let statusData = {};
@@ -31,6 +43,6 @@ class API {
 }
 
 
-const apiObject = new API();
+const api_auth_Object = new API_AUTH();
 
-export default apiObject
+export default api_auth_Object

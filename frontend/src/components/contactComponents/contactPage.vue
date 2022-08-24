@@ -23,13 +23,23 @@
                   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-1">
                     <div class="form-group">
                       <label>Name</label>
-                      <input type="text" class="form-control" />
+                      <input
+                        type="text"
+                        class="form-control"
+                        v-model="formData.name"
+                        :disabled="formData.disabled"
+                      />
                     </div>
                   </div>
                   <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-1">
                     <div class="form-group">
                       <label>Email</label>
-                      <input type="email" class="form-control" />
+                      <input
+                        type="email"
+                        class="form-control"
+                        v-model="formData.email"
+                        :disabled="formData.disabled"
+                      />
                     </div>
                   </div>
                 </div>
@@ -37,7 +47,11 @@
                   <div class="row">
                     <div class="form-group">
                       <label>Describe your issue</label>
-                      <textarea class="form-control" rows="5"></textarea>
+                      <textarea
+                        class="form-control"
+                        rows="3"
+                        v-model="formData.issue"
+                      ></textarea>
                     </div>
                   </div>
                 </div>
@@ -110,5 +124,26 @@ import CustomButton from "../global/customButton.vue";
 export default {
   name: "ContactPage",
   components: { CustomButton },
+  data() {
+    return {
+      formData: {
+        name: null,
+        email: null,
+        issue: null,
+        isLoggedIn: null,
+        disabled: false,
+      },
+    };
+  },
+  mounted() {
+    const user = this.$store.state.user;
+
+    if (user.isLoggedIn) {
+      this.formData.name = user.name;
+      this.formData.email = user.email;
+      this.formData.isLoggedIn = user.isLoggedIn;
+      this.formData.disabled = this.formData.isLoggedIn ? true : false;
+    }
+  },
 };
 </script>

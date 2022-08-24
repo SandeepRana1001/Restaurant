@@ -1,8 +1,11 @@
 const express = require('express')
 const { check } = require('express-validator')
+const { checkAuth } = require('../../middlewares/check-auth')
 const food_controller = require('./foodController')
 
 const router = express.Router()
+
+router.use(checkAuth)
 
 router.get('/', food_controller.getMenu)
 

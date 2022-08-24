@@ -12,18 +12,22 @@ import AboutPage from './components/aboutComponents/AboutPage'
 import ContactPage from './components/contactComponents/contactPage'
 import signUpPage from './components/signUpComponents/signUpPage'
 import signInPage from './components/signInComponents/signInPage'
-import store from './store'
+import foodMenu from './components/foodMenu/foodMenu'
+
+import store from './store/'
 
 // require('dotenv').config()
 
 Vue.use(VueRouter);
 
 const routes = [
-  { path: '/', component: HomePage },
+  { path: '/', component: HomePage, name: 'Home' },
   { path: '/about', component: AboutPage },
   { path: '/contact', component: ContactPage },
   { path: '/signUp', component: signUpPage },
-  { path: '/signIn', component: signInPage }
+  { path: '/signIn', component: signInPage },
+  { path: '/menu', component: foodMenu }
+
 
 
 
